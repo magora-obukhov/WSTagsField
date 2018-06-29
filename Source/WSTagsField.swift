@@ -26,6 +26,13 @@ open class WSTagsField: UIScrollView {
             tagViews.forEach { $0.tintColor = self.tintColor }
         }
     }
+    
+    /// Cursor color
+    open var cursorColor: UIColor? {
+        didSet {
+            textField.tintColor = cursorColor
+        }
+    }
 
     /// Text color for tag view in normal (non-selected) state.
     open var textColor: UIColor? {
