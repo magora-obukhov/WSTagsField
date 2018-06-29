@@ -712,14 +712,14 @@ extension WSTagsField {
     }
 
     private func attributedPlaceholder() -> NSAttributedString {
-        var attributes: [NSAttributedStringKey: Any]?
+        var attributes: [String: Any]?
         if let placeholderColor = placeholderColor {
-            attributes = [NSAttributedStringKey.foregroundColor: placeholderColor]
+            attributes = [NSForegroundColorAttributeName: placeholderColor]
         }
         return NSAttributedString(string: placeholder, attributes: attributes)
     }
 
-    private var maxHeightBasedOnNumberOfLines: CGFloat {
+    public var maxHeightBasedOnNumberOfLines: CGFloat {
         guard self.numberOfLines > 0 else {
             return CGFloat.infinity
         }
